@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var myImageView: UIImageView!
+    var count = 1
+    @IBOutlet weak var lbl1: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        lbl1.text = "버튼을 누르십시오"
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func change(_ sender: Any) {
+        if count == 6 {
+            count = 1
+        }
+        myImageView.image = UIImage(named: "frame\(count).png")
+        lbl1.text = "frame\(count).png"
+        
+        count = count + 1
+        
+        
     }
-
-
+    
+    
 }
 
